@@ -70,6 +70,7 @@ if __name__ == "__main__":
         call_graph = json.load(f)
 
     explanation_file_path = "output_explanation.json"
+    code_file_path = "output_code.json"
 
     prompt = f"""
         You are an expert in code review and explanation. Analyze the following code and its corresponding call graph.
@@ -87,11 +88,27 @@ if __name__ == "__main__":
 
     azure_integration = AzureOpenAIIntegration()
 
-    explanation_data = {"prompt": prompt, "explanation": azure_integration.get_explanation(prompt)}
+    explanation_data = {"explanation": azure_integration.get_explanation(prompt)}
 
     #Write the explanation to a JSON file
     with open(explanation_file_path, "w") as json_file:
        json.dump(explanation_data, json_file, indent=4)
+
+
+    # Generate code based on the explanation
+    code_prompt = f"""
+    The following explanation describes a code implementation. Please generate the corresponding code based on the explanation. 
+    No need for any other text, information, context, prompt, or explanation.
+
+    Explanation:
+    {explanation_data}
+    """
+    generated_code = azure_integration.get_code(code_prompt)
+    code_data = {"code": generated_code}
+
+    # Write the generated code to a JSON file
+    with open(code_file_path, "w") as json_file:
+        json.dump(code_data, json_file, indent=4)
 
 
 # import os
