@@ -31,50 +31,23 @@ const extractFunction = (content, functionName, fileName) => {
   return matches ? matches.join("\n\n") : null;
 };
 
-// Generate a call graph for a function
-const generateCallGraph = (functionCode, functionName, fileName) => {
-  if (!functionCode) return null;
+// Helper function to sanitize function names (remove parentheses)
+const sanitizeFunctionName = (fnName) => fnName.replace(/\(\)$/, "");
 
-  let callRegex;
-  if (fileName.endsWith(".js") || fileName.endsWith(".ts")) {
-    callRegex = /(\w+)\s*\(.*?\)/g;
-  } else if (fileName.endsWith(".py")) {
-    callRegex = /(\w+)\s*\(.*?\)/g;
-  } else if (fileName.endsWith(".java") || fileName.endsWith(".cpp")) {
-    callRegex = /(\w+)\s*\(.*?\)/g;
-  } else {
-    return null; // Unsupported language
-  }
-
-  const calls = [];
-  let match;
-  while ((match = callRegex.exec(functionCode)) !== null) {
-    if (match[1] !== functionName) {
-      calls.push(match[1]);
-    }
-  }
-
-  return {
-    function: functionName,
-    calls,
+// Fetch function details and return a structured JSON
+const fetchFunctionDetails = async (owner, repo, functionName, callers, calls) => {
+  const result = {
+    function_code: null,
+    callers_functions_code: {},
+    calls_functions_code: {},
   };
-};
 
-// Recursive function to explore directories and search for functions
-const fetchSourceCode = async (owner, repo, path = "", sourceFile, functionFile, callGraphFile, functionName) => {
-  const callGraphs = [];
+  const fetchFunctionCode = async (fnName) => {
+    let functionCode = null;
 
-  try {
-    const content = await octokit.repos.getContent({ owner, repo, path });
-
+    const content = await octokit.repos.getContent({ owner, repo, path: "" });
     for (const item of content.data) {
-      if (item.type === "dir" && item.name === "node_modules") {
-        console.log(`Skipping directory: ${item.path}`);
-        continue;
-      }
-
       if (item.type === "file" && isSourceFile(item.name)) {
-        console.log(`Processing file: ${item.path}`);
         const fileContent = await octokit.repos.getContent({
           owner,
           repo,
@@ -82,41 +55,29 @@ const fetchSourceCode = async (owner, repo, path = "", sourceFile, functionFile,
         });
 
         const decodedContent = Buffer.from(fileContent.data.content, "base64").toString("utf-8");
-
-        const sourceOutput = `File: ${item.path}\n\n${decodedContent}\n\n===\n\n`;
-        await fs.appendFile(sourceFile, sourceOutput, "utf-8");
-
-        const functionCode = extractFunction(decodedContent, functionName, item.name);
-        const functionOutput = `File: ${item.path}\n\n${functionCode || `Function '${functionName}' not found.`}\n\n===\n\n`;
-        await fs.appendFile(functionFile, functionOutput, "utf-8");
-
-        if (functionCode) {
-          const callGraph = generateCallGraph(functionCode, functionName, item.name);
-          if (callGraph) {
-            callGraphs.push({
-              file: item.path,
-              callGraph,
-            });
-          }
-        }
-      } else if (item.type === "dir") {
-        const subGraphs = await fetchSourceCode(
-          owner,
-          repo,
-          item.path,
-          sourceFile,
-          functionFile,
-          callGraphFile,
-          functionName
-        );
-        callGraphs.push(...subGraphs);
+        functionCode = extractFunction(decodedContent, fnName, item.name);
+        if (functionCode) break; // Stop when function is found
       }
     }
-  } catch (error) {
-    console.error(`Error accessing ${path}:`, error.message);
+    return functionCode;
+  };
+
+  // Fetch the main function code
+  result.function_code = await fetchFunctionCode(sanitizeFunctionName(functionName));
+
+  // Fetch the caller function codes
+  for (const caller of callers) {
+    const sanitizedCaller = sanitizeFunctionName(caller);
+    result.callers_functions_code[sanitizedCaller] = await fetchFunctionCode(sanitizedCaller);
   }
 
-  return callGraphs;
+  // Fetch the called function codes
+  for (const call of calls) {
+    const sanitizedCall = sanitizeFunctionName(call);
+    result.calls_functions_code[sanitizedCall] = await fetchFunctionCode(sanitizedCall);
+  }
+
+  return result;
 };
 
 // Set up Express server
@@ -125,34 +86,21 @@ const port = 3000;
 
 app.use(express.json());
 
-app.post("/fetch-source-code", async (req, res) => {
-  const { owner, repo, functionName } = req.body;
-
-  const sourceFile = `source_code_${repo}.txt`;
-  const functionFile = `functions_${repo}.txt`;
-  const callGraphFile = `call_graph_${repo}.json`;
+app.post("/fetch-function-details", async (req, res) => {
+  const { owner, repo, functionName, callers, calls } = req.body;
 
   try {
-    await fs.writeFile(sourceFile, `Source Code for Repository: ${repo}\n\n`, "utf-8");
-    await fs.writeFile(functionFile, `Functions Matching '${functionName}' in Repository: ${repo}\n\n`, "utf-8");
+    const result = await fetchFunctionDetails(owner, repo, functionName, callers, calls);
 
-    const callGraphs = await fetchSourceCode(
-      owner,
-      repo,
-      "",
-      sourceFile,
-      functionFile,
-      callGraphFile,
-      functionName
-    );
+    // Write the result to a file
+    const outputFileName = `function_details_${repo}.json`;
+    await fs.writeFile(outputFileName, JSON.stringify(result, null, 2), "utf-8");
 
-    await fs.writeFile(callGraphFile, JSON.stringify(callGraphs, null, 2), "utf-8");
-
+    // Respond with success
     res.json({
-      message: "Source code processed successfully",
-      sourceFile,
-      functionFile,
-      callGraphFile,
+      message: "Function details fetched and written to file successfully.",
+      outputFile: outputFileName,
+      result,
     });
   } catch (error) {
     console.error("Error:", error);

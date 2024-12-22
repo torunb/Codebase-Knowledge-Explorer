@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from integration import UpdatedAzureOpenAIIntegration
+from updated_integration import UpdatedAzureOpenAIIntegration
 
 app = Flask(__name__)
 
@@ -12,8 +12,8 @@ def process_code():
         # Get JSON payload from the request
         data = request.get_json()
         function_code = data.get("function_code")
-        caller_functions_code = data.get("caller_functions_code")
-        callee_functions_code = data.get("callee_functions_code")
+        caller_functions_code = data.get("callers_functions_code")
+        callee_functions_code = data.get("calls_functions_code")
 
         if not function_code or not caller_functions_code or not callee_functions_code:
             return jsonify({"error": "Missing one or more required fields: function_code, caller_functions_code, callee_functions_code"}), 400

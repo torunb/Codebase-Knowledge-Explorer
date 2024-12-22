@@ -39,8 +39,8 @@ def similarity():
     try:
         # Parse JSON input
         data = request.get_json()
-        code1 = data.get('code1', None)
-        code2 = data.get('code2', None)
+        code1 = data.get('original_code', None)
+        code2 = data.get('generated_code', None)
         explanation = data.get('explanation', None)
 
         if not code1 or not code2:

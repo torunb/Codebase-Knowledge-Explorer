@@ -19,19 +19,17 @@ class UpdatedAzureOpenAIIntegration:
     def get_explanation(self, function_code, caller_functions_code, callee_functions_code):
         # Create the explanation prompt using all provided code
         prompt = f"""
-        You are an expert code reviewer. Analyze the following code block (`function_code`) in the context of its caller and callee functions.
-
-        1. Provide a detailed explanation of what `function_code` does, referencing relevant context from `caller_functions_code` and `callee_functions_code`.
-        2. Include potential use cases, optimizations, and any issues.
+        You are an expert code reviewer. Analyze the following code block (`function_code`) in detail. Your explanation should focus solely on the functionality, purpose, and behavior of `function_code`. Use `caller_functions_code` and `callee_functions_code` as background context to better understand and explain `function_code` but do not include them directly in the explanation.
 
         function_code:
         {function_code}
 
-        caller_functions_code:
+        caller_functions_code (for context only):
         {caller_functions_code}
 
-        callee_functions_code:
+        callee_functions_code (for context only):
         {callee_functions_code}
+
         """
 
         try:
@@ -50,7 +48,8 @@ class UpdatedAzureOpenAIIntegration:
     def get_code(self, explanation):
         # Create the code-generation prompt using the explanation
         prompt = f"""
-        You are an expert software engineer. Based on the following explanation, generate a corresponding implementation in Python:
+        The following explanation describes a code implementation. Please generate the corresponding code based on the explanation. 
+        No need for any other text, information, context, prompt, or explanation.
 
         Explanation:
         {explanation}
