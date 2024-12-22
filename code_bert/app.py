@@ -41,6 +41,7 @@ def similarity():
         data = request.get_json()
         code1 = data.get('code1', None)
         code2 = data.get('code2', None)
+        explanation = data.get('explanation', None)
 
         if not code1 or not code2:
             return jsonify({"error": "Both 'code1' and 'code2' fields are required."}), 400
@@ -53,7 +54,10 @@ def similarity():
         similarity_score = calculate_similarity(embedding1, embedding2)
         similarity_score = round(similarity_score, 2)
         print(f"Similarity Score: {similarity_score}")
-        return jsonify({"Confidence score": similarity_score})
+        return jsonify({
+            "Confidence score": similarity_score,
+            "Explanation": explanation
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
