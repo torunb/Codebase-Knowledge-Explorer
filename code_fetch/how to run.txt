@@ -1,0 +1,16 @@
+Adjust the github apikey
+
+(not sure about the names)
+npm install octokit
+npm install express
+
+Then run the script
+
+To send request link: http://localhost:3000/fetch-source-code
+
+Request body
+{
+  "owner": "torunb",
+  "repo": "cke_githup_api",
+  "functionName": "generate_ngrams"
+}

@@ -1,0 +1,8 @@
+The request link is http://127.0.0.1:5001/similarity
+
+The structure is the following
+
+{
+    "code1": "THE_CODE_YOU_WANT_TO_CHECK 1",
+    "code2": "THE_CODE_YOU_WANT_TO_CHECK 2"
+}
