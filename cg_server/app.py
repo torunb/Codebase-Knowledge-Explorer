@@ -20,93 +20,99 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def clean_function_name(function_name):
+    """
+    Removes the text inside parentheses (e.g., "(java.lang.String[])") from the function name.
+    """
+    return re.sub(r'\(.*\)', '()', function_name)
 
-@app.route('/upload', methods=['POST'])
+@app.route('/generate', methods=['GET'])
 def upload_file():
-    classes = []
     methods = []
-    if 'file' not in request.files:
-        return jsonify({"error": "No file part"}), 400
-    file = request.files['file']
-    if file.filename == '':
-        return jsonify({"error": "No selected file"}), 400
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        jar_path = os.path.join(UPLOAD_FOLDER, filename)
+    function_name = request.args.get('function_name')
+    if not function_name:
+        return jsonify({"error": "Function name is required"}), 400
+    jar_dir = os.path.dirname(os.path.abspath(__file__))
+    file = os.path.join(jar_dir, "c.jar")
 
-        # Save the file
-        file.save(jar_path)
+    # Define output paths
+    output_txt = os.path.join(OUTPUT_FOLDER, f"cg.txt")
+    output_filtered_txt = os.path.join(OUTPUT_FOLDER, f"cg2.txt")
+    output_dot = os.path.join(OUTPUT_FOLDER, f"cg.dot")
+    output_png = os.path.join(OUTPUT_FOLDER, f"cg.png")
+    output_json = os.path.join(OUTPUT_FOLDER, f"cg.json")
 
-        # Define output paths
-        output_txt = os.path.join(OUTPUT_FOLDER, f"{filename.rsplit('.', 1)[0]}.txt")
-        output_dot = os.path.join(OUTPUT_FOLDER, f"{filename.rsplit('.', 1)[0]}.dot")
-        output_png = os.path.join(OUTPUT_FOLDER, f"{filename.rsplit('.', 1)[0]}.png")
-        output_json = os.path.join(OUTPUT_FOLDER, f"{filename.rsplit('.', 1)[0]}.json")
-
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        path_to_static_jar = os.path.join(script_dir, "javacg-0.1-SNAPSHOT-static.jar")
-
-        #path_to_static_jar = os.path.join(UPLOAD_FOLDER, "javacg-0.1-SNAPSHOT-static.jar")
-        try:
-
-            subprocess.run(["java", "-jar", path_to_static_jar, jar_path, ">", output_txt], shell=True, check=True)
-
-            generate_dot_file(output_txt, output_dot)
-            subprocess.run(
-                ["dot", "-Tpng", "-o", output_png, output_dot],
-                check=True,
-                text=True,
-                shell=True
-            )
-
-            with open(output_txt, "r") as file:
-                for line in file:
-                    line = line.strip()
-                    # Match class relationships
-                    if match := re.match(r"^C:(.+?) (.+)$", line):
-                        classes.append({
-                            "CallerClass": match.group(1),
-                            "CalleeClass": match.group(2)
-                        })
-                    # Match method relationships
-                    elif match := re.match(
-                            r"^M:(.+?):(.+?)\((.*?)\) \((.+?)\)(.+?):(.+?)\((.*?)\)$", line
-                    ):
-                        methods.append({
-                            "CallerClass": match.group(1),
-                            "CallerMethod": match.group(2),
-                            "CallerSignature": match.group(3),
-                            "Type": match.group(4),  # (O), (S), (M), etc.
-                            "CalleeClass": match.group(5),
-                            "CalleeMethod": match.group(6),
-                            "CalleeSignature": match.group(7),
-                        })
-
-            # Combine results into a single dictionary
-            callgraph_json = {
-                "Classes": classes,
-                "Methods": methods
-            }
-
-            # Write JSON to a file
-            with open(output_json, "w") as json_file:
-                json.dump(callgraph_json, json_file, indent=4)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    path_to_static_jar = os.path.join(script_dir, "javacg-0.1-SNAPSHOT-static.jar")
 
 
-            # Check if output files are created
-            if not os.path.exists(output_png) or not os.path.exists(output_json):
-                return jsonify({"error": "Failed to generate call graph"}), 500
+    try:
 
-            return jsonify({
-                "png_url": f"/download/{os.path.basename(output_png)}",
-                "json_url": f"/download/{os.path.basename(output_json)}"
-            })
-        finally:
-            # Optionally delete the input file after processing
-            if os.path.exists(jar_path):
-                os.remove(jar_path)
-    else:
-        return jsonify({"error": "Invalid file type. Only .jar files are allowed."}), 400
+        subprocess.run(["java", "-jar", path_to_static_jar, file, ">", output_txt], shell=True, check=True)
+
+        with open(output_txt, "r") as infile, open(output_filtered_txt, "w") as outfile:
+            for line in infile:
+                # Keep only lines containing "function", not containing "<init>", and not starting with "C:"
+                if function_name in line and "<init>" not in line and not line.startswith("C:"):
+                    outfile.write(line)
+
+        print("Filtered file saved")
+
+
+        generate_dot_file(output_filtered_txt, output_dot)
+        subprocess.run(
+            ["dot", "-Tpng", "-o", output_png, output_dot],
+            check=True,
+            text=True,
+            shell=True
+        )
+
+        callers = set()
+        calls = set()
+
+        with open(output_filtered_txt, "r") as txt_file:
+            for line in txt_file:
+                parts = line.strip().split()
+                if len(parts) >= 2:
+                    caller = parts[0].split(":")[-1]  # Extract the caller function
+                    callee = parts[1].split(":")[-1]  # Extract the callee function
+
+                    caller_cleaned = clean_function_name(caller)
+                    callee_cleaned = clean_function_name(callee)
+                    # If the caller is the function_name, add the callee to calls
+                    if caller_cleaned  == function_name:
+                        calls.add(callee_cleaned)
+
+                    # If the callee is the function_name, add the caller to callers
+                    if callee_cleaned == function_name:
+                        callers.add(caller_cleaned)
+
+        callers_list = sorted(list(callers))
+        calls_list = sorted(list(calls))
+
+        callgraph_json = {
+            "function_name": function_name,
+            "callers": callers_list,
+            "calls": calls_list
+        }
+
+        # Write JSON to a file
+        with open(output_json, "w") as json_file:
+            json.dump(callgraph_json, json_file, indent=4)
+
+
+        # Check if output files are created
+        if not os.path.exists(output_png) or not os.path.exists(output_json):
+            return jsonify({"error": "Failed to generate call graph"}), 500
+
+        return jsonify({
+            "png_url": f"/download/{os.path.basename(output_png)}",
+            "json_url": f"/download/{os.path.basename(output_json)}"
+        })
+    finally:
+        pass
+
+
 
 
 @app.route('/download/<filename>', methods=['GET'])
@@ -122,13 +128,19 @@ def generate_dot_file(callgraph_txt_path, output_dot_path):
         with open(output_dot_path, "w") as dot_file:
             # Write the header
             dot_file.write("digraph CallGraph {\n")
-
+            dot_file.write('node [shape=box, style=filled, fillcolor=lightblue, fontname="Arial"];\n')
+            dot_file.write('edge [fontname="Arial"];\n')
             # Read the callgraph.txt and write the edges
             with open(callgraph_txt_path, "r") as txt_file:
                 for line in txt_file:
                     parts = line.strip().split()
                     if len(parts) >= 2:  # Ensure there are enough parts to form an edge
-                        dot_file.write(f'"{parts[0]}" -> "{parts[1]}";\n')
+                        caller = parts[0].split(":")[-1]  # Extract the caller function
+                        callee = parts[1].split(":")[-1]  # Extract the callee function
+
+                        caller_cleaned = clean_function_name(caller)
+                        callee_cleaned = clean_function_name(callee)
+                        dot_file.write(f'"{caller_cleaned}" -> "{callee_cleaned}";\n')
 
             # Write the footer
             dot_file.write("}\n")
