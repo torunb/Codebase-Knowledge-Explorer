@@ -1,0 +1,46 @@
+{
+    "Classes": [
+        {
+            "CallerClass": "Main",
+            "CalleeClass": "java.lang.Object"
+        },
+        {
+            "CallerClass": "Main",
+            "CalleeClass": "Main"
+        },
+        {
+            "CallerClass": "Main",
+            "CalleeClass": "java.lang.System"
+        },
+        {
+            "CallerClass": "Main",
+            "CalleeClass": "java.io.PrintStream"
+        }
+    ],
+    "Methods": [
+        {
+            "CallerClass": "Main",
+            "CallerMethod": "<init>",
+            "CalleeMethod": "<init>",
+            "CalleeSignature": ""
+        },
+        {
+            "CallerClass": "Main",
+            "CallerMethod": "main",
+            "CalleeMethod": "A",
+            "CalleeSignature": ""
+        },
+        {
+            "CallerClass": "Main",
+            "CallerMethod": "A",
+            "CalleeMethod": "B",
+            "CalleeSignature": ""
+        },
+        {
+            "CallerClass": "Main",
+            "CallerMethod": "B",
+            "CalleeMethod": "println",
+            "CalleeSignature": "java.lang.String"
+        }
+    ]
+}
