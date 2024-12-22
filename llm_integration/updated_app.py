@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from integration import AzureOpenAIIntegration
+from integration import UpdatedAzureOpenAIIntegration
 
 app = Flask(__name__)
 
@@ -19,7 +19,7 @@ def process_code():
             return jsonify({"error": "Missing one or more required fields: function_code, caller_functions_code, callee_functions_code"}), 400
 
         # Initialize Azure OpenAI integration
-        azure_integration = AzureOpenAIIntegration()
+        azure_integration = UpdatedAzureOpenAIIntegration()
 
         # Generate explanation
         explanation = azure_integration.get_explanation(function_code, caller_functions_code, callee_functions_code)

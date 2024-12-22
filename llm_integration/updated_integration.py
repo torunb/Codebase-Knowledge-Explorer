@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-class AzureOpenAIIntegration:
+class UpdatedAzureOpenAIIntegration:
     def __init__(self):
         # Set the API key and base URL for Azure OpenAI
         openai.api_key = os.getenv("OPENAI_API_KEY")  # Ensure your .env file contains this key
