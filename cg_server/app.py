@@ -33,7 +33,7 @@ def upload_file():
     if not function_name:
         return jsonify({"error": "Function name is required"}), 400
     jar_dir = os.path.dirname(os.path.abspath(__file__))
-    file = os.path.join(jar_dir, "c.jar")
+    file = os.path.join(jar_dir, "MathProject.jar")
 
     # Define output paths
     output_txt = os.path.join(OUTPUT_FOLDER, f"cg.txt")
@@ -49,11 +49,11 @@ def upload_file():
     try:
 
         subprocess.run(["java", "-jar", path_to_static_jar, file, ">", output_txt], shell=True, check=True)
-
         with open(output_txt, "r") as infile, open(output_filtered_txt, "w") as outfile:
             for line in infile:
                 # Keep only lines containing "function", not containing "<init>", and not starting with "C:"
                 if function_name in line and "<init>" not in line and not line.startswith("C:"):
+                    #cleaned_line = re.sub(r"\s*\(M\)|\s*\(I\)|\s*\(O\)|\s*\(S\)|\s*\(D\)", "", line)
                     outfile.write(line)
 
         print("Filtered file saved")
@@ -80,11 +80,11 @@ def upload_file():
                     caller_cleaned = clean_function_name(caller)
                     callee_cleaned = clean_function_name(callee)
                     # If the caller is the function_name, add the callee to calls
-                    if caller_cleaned  == function_name:
+                    if function_name in caller_cleaned:
                         calls.add(callee_cleaned)
 
                     # If the callee is the function_name, add the caller to callers
-                    if callee_cleaned == function_name:
+                    if function_name in callee_cleaned:
                         callers.add(caller_cleaned)
 
         callers_list = sorted(list(callers))
@@ -137,6 +137,8 @@ def generate_dot_file(callgraph_txt_path, output_dot_path):
                     if len(parts) >= 2:  # Ensure there are enough parts to form an edge
                         caller = parts[0].split(":")[-1]  # Extract the caller function
                         callee = parts[1].split(":")[-1]  # Extract the callee function
+                        #caller_class = parts[0].split(":")[-2]
+                        #callee_class = parts[1].split(":")[-2]
 
                         caller_cleaned = clean_function_name(caller)
                         callee_cleaned = clean_function_name(callee)
