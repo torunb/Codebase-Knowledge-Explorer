@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateGCD()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfGCDs",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

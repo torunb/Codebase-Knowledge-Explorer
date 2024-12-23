@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "calculateModulo()"
+    ],
+    "functionName": "calculateModuloOfFactorialSum"
+}

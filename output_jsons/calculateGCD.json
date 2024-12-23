@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateGCD()",
+        "calculateLCM()",
+        "calculateSumOfGCDs()"
+    ],
+    "calls": [
+        "calculateGCD()",
+        "divide()",
+        "multiply()",
+        "subtract()"
+    ],
+    "functionName": "calculateGCD"
+}

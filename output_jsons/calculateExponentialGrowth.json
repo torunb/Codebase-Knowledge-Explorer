@@ -1,0 +1,10 @@
+{
+    "callers": [
+        "calculateSumOfExponentialGrowths()"
+    ],
+    "calls": [
+        "exp()",
+        "multiply()"
+    ],
+    "functionName": "calculateExponentialGrowth"
+}

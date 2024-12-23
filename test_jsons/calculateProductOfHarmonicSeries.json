@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateHarmonicSeries()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfHarmonicSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

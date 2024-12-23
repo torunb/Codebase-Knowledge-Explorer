@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

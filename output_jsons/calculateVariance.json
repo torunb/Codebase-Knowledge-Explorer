@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateVarianceOfFactorials()"
+    ],
+    "calls": [
+        "calculateArithmeticMean()",
+        "calculateVariance()",
+        "divide()",
+        "factorial()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateVariance"
+}

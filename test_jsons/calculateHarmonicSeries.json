@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateProductOfHarmonicSeries()"
+    ],
+    "calls": [
+        "divide()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

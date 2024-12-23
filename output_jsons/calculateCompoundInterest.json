@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateProductOfCompoundInterests()"
+    ],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateCompoundInterest"
+}

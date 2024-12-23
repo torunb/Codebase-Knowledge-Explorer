@@ -1,0 +1,10 @@
+{
+    "callers": [
+        "calculateProductOfLogarithmicFunctions()"
+    ],
+    "calls": [
+        "divide()",
+        "log()"
+    ],
+    "functionName": "calculateLogarithmicFunction"
+}

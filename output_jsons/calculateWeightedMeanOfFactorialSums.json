@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateWeightedMeanOfFactorialSums"
+}

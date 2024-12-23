@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateBinomialCoefficient()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfBinomialCoefficients"
+}

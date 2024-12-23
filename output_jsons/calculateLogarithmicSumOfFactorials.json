@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "log()",
+        "sum()"
+    ],
+    "functionName": "calculateLogarithmicSumOfFactorials"
+}

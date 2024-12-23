@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateLogarithmicFunction()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfLogarithmicFunctions",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

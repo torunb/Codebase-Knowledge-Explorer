@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculatePythagoreanTheorem()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfPythagoreanTheorems"
+}

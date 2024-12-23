@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "isPrime()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfPrimes",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

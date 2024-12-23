@@ -1,0 +1,10 @@
+{
+    "callers": [
+        "calculateProductOfHarmonicSeries()"
+    ],
+    "calls": [
+        "divide()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicSeries"
+}

@@ -1,0 +1,13 @@
+{
+    "callers": [
+        "calculateProductOfLCMs()"
+    ],
+    "calls": [
+        "calculateGCD()",
+        "divide()",
+        "multiply()"
+    ],
+    "functionName": "calculateLCM",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

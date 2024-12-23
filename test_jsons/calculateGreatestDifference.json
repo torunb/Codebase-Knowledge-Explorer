@@ -1,0 +1,14 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "getAsInt()",
+        "max()",
+        "min()",
+        "stream()",
+        "subtract()"
+    ],
+    "functionName": "calculateGreatestDifference",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

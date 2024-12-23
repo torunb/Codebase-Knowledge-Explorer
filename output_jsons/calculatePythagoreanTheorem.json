@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculateProductOfPythagoreanTheorems()"
+    ],
+    "calls": [
+        "power()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculatePythagoreanTheorem"
+}

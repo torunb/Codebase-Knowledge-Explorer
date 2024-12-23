@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "isPrime()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfPrimes"
+}

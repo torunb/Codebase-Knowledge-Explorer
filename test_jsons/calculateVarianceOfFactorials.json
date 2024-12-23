@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateVariance()",
+        "factorial()"
+    ],
+    "functionName": "calculateVarianceOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

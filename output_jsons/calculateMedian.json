@@ -1,0 +1,13 @@
+{
+    "callers": [
+        "calculateMedianOfFactorials()"
+    ],
+    "calls": [
+        "calculateMedian()",
+        "divide()",
+        "factorial()",
+        "sort()",
+        "sum()"
+    ],
+    "functionName": "calculateMedian"
+}

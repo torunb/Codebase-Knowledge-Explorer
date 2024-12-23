@@ -1,0 +1,13 @@
+{
+    "callers": [
+        "calculateSumOfCubicEquations()"
+    ],
+    "calls": [
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateCubicEquation",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

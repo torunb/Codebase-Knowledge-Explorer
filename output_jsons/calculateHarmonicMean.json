@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateSumOfHarmonicMeans()"
+    ],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicMean"
+}

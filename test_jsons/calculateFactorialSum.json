@@ -1,0 +1,17 @@
+{
+    "callers": [
+        "calculateArithmeticMeanOfFactorialSums()",
+        "calculateHarmonicMeanOfFactorialSums()",
+        "calculateModuloOfFactorialSum()",
+        "calculateRootMeanSquareOfFactorialSums()",
+        "calculateSumOfFactorialSums()",
+        "calculateWeightedMeanOfFactorialSums()"
+    ],
+    "calls": [
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateFactorialSum",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

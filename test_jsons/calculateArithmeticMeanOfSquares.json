@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateArithmeticMeanOfSquares",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

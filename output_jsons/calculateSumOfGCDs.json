@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateGCD()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfGCDs"
+}

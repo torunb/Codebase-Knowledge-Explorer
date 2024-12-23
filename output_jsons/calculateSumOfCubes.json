@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateProductOfCubes()"
+    ],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfCubes"
+}

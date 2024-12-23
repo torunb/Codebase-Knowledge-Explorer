@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticMean()",
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfFactorialMeans",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

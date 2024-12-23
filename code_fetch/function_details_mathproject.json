@@ -1,0 +1,11 @@
+{
+  "function_code": "isPrime(int number) {\r\n        if (number <= 1) return false;\r\n        for (int i = 2; i <= Math.sqrt(number); i++) {\r\n            int remainder = calculateModulo(number, i);\r\n            if (remainder == 0) return false;\r\n        }\n\nisPrime(i)) {\r\n                sum = MathLibrary.sum((int)sum, i);\r\n            }",
+  "callers_functions_code": {
+    "calculatePrimeFactorialSum": "calculatePrimeFactorialSum(int n) {\r\n        long sum = 0;\r\n        for (int i = 2; i <= n; i++) {\r\n            if (File2.isPrime(i)) {\r\n                long factorial = MathLibrary.factorial(i);\r\n                sum = MathLibrary.sum((int)sum, (int)factorial);\r\n            }",
+    "calculateSumOfPrimes": "calculateSumOfPrimes(int n) {\r\n        long sum = 0;\r\n        for (int i = 2; i <= n; i++) {\r\n            if (isPrime(i)) {\r\n                sum = MathLibrary.sum((int)sum, i);\r\n            }"
+  },
+  "calls_functions_code": {
+    "calculateModulo": "calculateModulo(int a, int b) {\r\n        double quotient = MathLibrary.divide(a, b);\r\n        int product = MathLibrary.multiply((int)quotient, b);\r\n        return MathLibrary.subtract(a, product);\r\n    }",
+    "sqrt": "sqrt(number); i++) {\r\n            int remainder = calculateModulo(number, i);\r\n            if (remainder == 0) return false;\r\n        }"
+  }
+}

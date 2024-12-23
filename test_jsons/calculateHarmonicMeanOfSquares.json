@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicMeanOfSquares",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

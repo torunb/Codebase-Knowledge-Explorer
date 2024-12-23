@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculatePythagoreanTheorem()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfPythagoreanTheorems",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

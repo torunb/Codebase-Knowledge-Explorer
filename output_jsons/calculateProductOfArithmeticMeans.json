@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticMean()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfArithmeticMeans"
+}

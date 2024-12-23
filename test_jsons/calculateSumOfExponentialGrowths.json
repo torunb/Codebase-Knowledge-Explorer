@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateExponentialGrowth()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfExponentialGrowths",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

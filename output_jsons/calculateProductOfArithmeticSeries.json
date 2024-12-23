@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticSeries()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfArithmeticSeries"
+}

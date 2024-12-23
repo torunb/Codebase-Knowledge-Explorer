@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModel
 import torch
 import torch.nn.functional as F
+import csv
+import os
 
 app = Flask(__name__)
 
@@ -33,6 +35,13 @@ def get_embedding(snippet, tokenizer, model, device="cpu"):
 def calculate_similarity(embedding1, embedding2):
     return F.cosine_similarity(embedding1, embedding2).item()
 
+# CSV file setup
+CSV_FILE = "explanations.csv"
+if not os.path.exists(CSV_FILE):
+    with open(CSV_FILE, "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Explanation", "Confidence Score"])  # Header row
+
 # API Route for similarity
 @app.route('/similarity', methods=['POST'])
 def similarity():
@@ -53,6 +62,12 @@ def similarity():
         # Calculate similarity
         similarity_score = calculate_similarity(embedding1, embedding2)
         similarity_score = round(similarity_score, 2)
+
+        # Append to CSV file
+        with open(CSV_FILE, "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([explanation if explanation else "No explanation provided", similarity_score])
+
         print(f"Similarity Score: {similarity_score}")
         return jsonify({
             "Confidence score": similarity_score,
@@ -61,5 +76,5 @@ def similarity():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)

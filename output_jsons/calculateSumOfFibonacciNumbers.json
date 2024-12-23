@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFibonacci()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfFibonacciNumbers"
+}

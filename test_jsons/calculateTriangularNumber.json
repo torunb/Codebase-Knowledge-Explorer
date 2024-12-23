@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "factorial()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateTriangularNumber",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

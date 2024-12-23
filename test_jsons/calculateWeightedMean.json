@@ -1,0 +1,13 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateWeightedMean",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

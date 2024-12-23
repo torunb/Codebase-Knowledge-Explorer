@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateHarmonicSeries()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfHarmonicSeries"
+}

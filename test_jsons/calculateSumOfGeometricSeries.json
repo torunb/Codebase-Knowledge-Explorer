@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateGeometricSeries()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfGeometricSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

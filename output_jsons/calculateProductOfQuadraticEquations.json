@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateQuadraticEquation()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfQuadraticEquations"
+}

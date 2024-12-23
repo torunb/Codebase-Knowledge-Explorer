@@ -1,0 +1,10 @@
+{
+    "callers": [
+        "calculateSumOfSineWaves()"
+    ],
+    "calls": [
+        "multiply()",
+        "sin()"
+    ],
+    "functionName": "calculateSineWave"
+}

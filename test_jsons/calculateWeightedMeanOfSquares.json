@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateWeightedMeanOfSquares",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

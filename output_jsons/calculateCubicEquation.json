@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculateSumOfCubicEquations()"
+    ],
+    "calls": [
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateCubicEquation"
+}

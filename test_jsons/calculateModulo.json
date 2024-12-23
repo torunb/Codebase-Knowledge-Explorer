@@ -1,0 +1,16 @@
+{
+    "callers": [
+        "calculateModuloOfFactorialSum()",
+        "isPrime()"
+    ],
+    "calls": [
+        "calculateFactorialSum()",
+        "calculateModulo()",
+        "divide()",
+        "multiply()",
+        "subtract()"
+    ],
+    "functionName": "calculateModulo",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateWeightedHarmonicMean",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

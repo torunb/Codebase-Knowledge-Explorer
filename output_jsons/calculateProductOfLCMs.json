@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateLCM()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfLCMs"
+}

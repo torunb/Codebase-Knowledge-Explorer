@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateDistanceBetweenPoints()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfDistancesBetweenPoints"
+}

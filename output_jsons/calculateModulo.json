@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateModuloOfFactorialSum()",
+        "isPrime()"
+    ],
+    "calls": [
+        "calculateFactorialSum()",
+        "calculateModulo()",
+        "divide()",
+        "multiply()",
+        "subtract()"
+    ],
+    "functionName": "calculateModulo"
+}

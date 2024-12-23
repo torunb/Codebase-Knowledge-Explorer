@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculateProductOfQuadraticEquations()"
+    ],
+    "calls": [
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateQuadraticEquation"
+}

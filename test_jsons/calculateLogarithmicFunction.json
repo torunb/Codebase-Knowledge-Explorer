@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateProductOfLogarithmicFunctions()"
+    ],
+    "calls": [
+        "divide()",
+        "log()"
+    ],
+    "functionName": "calculateLogarithmicFunction",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFibonacci()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfFibonacciNumbers",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

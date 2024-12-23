@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "permutation()"
+    ],
+    "functionName": "calculateCircularPermutation"
+}

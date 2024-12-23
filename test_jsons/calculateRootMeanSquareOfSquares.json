@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "power()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateRootMeanSquareOfSquares",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

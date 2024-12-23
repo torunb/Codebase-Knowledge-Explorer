@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "permutation()"
+    ],
+    "functionName": "calculateCircularPermutationOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

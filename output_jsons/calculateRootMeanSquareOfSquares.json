@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "power()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateRootMeanSquareOfSquares"
+}

@@ -1,0 +1,13 @@
+{
+    "callers": [
+        "calculateProductOfQuadraticEquations()"
+    ],
+    "calls": [
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateQuadraticEquation",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateProductOfCompoundInterests()"
+    ],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateCompoundInterest",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

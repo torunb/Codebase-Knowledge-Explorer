@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateSumOfSineWaves()"
+    ],
+    "calls": [
+        "multiply()",
+        "sin()"
+    ],
+    "functionName": "calculateSineWave",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

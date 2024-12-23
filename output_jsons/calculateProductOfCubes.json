@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateSumOfCubes()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfCubes"
+}

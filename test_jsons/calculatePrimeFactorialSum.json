@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "isPrime()",
+        "sum()"
+    ],
+    "functionName": "calculatePrimeFactorialSum",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

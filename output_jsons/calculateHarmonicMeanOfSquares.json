@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicMeanOfSquares"
+}

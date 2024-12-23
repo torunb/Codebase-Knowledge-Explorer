@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateProductOfArithmeticSeries()"
+    ],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "subtract()",
+        "sum()"
+    ],
+    "functionName": "calculateArithmeticSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

@@ -1,0 +1,17 @@
+{
+    "callers": [
+        "calculateProductOfArithmeticMeans()",
+        "calculateStandardDeviation()",
+        "calculateSumOfFactorialMeans()",
+        "calculateVariance()"
+    ],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "power()",
+        "sum()"
+    ],
+    "functionName": "calculateArithmeticMean",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

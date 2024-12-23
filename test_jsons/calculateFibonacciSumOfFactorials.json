@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFibonacci()",
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateFibonacciSumOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

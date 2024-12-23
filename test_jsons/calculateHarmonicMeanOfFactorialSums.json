@@ -1,0 +1,11 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "sum()"
+    ],
+    "functionName": "calculateHarmonicMeanOfFactorialSums",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

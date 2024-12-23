@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateGeometricSeries()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfGeometricSeries"
+}

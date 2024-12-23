@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateSumOfTangentWaves()"
+    ],
+    "calls": [
+        "multiply()",
+        "tan()"
+    ],
+    "functionName": "calculateTangentWave",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

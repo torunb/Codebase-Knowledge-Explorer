@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticSeries()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfArithmeticSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

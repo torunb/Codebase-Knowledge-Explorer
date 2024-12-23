@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateLCM()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfLCMs",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

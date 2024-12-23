@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateStandardDeviation()",
+        "factorial()"
+    ],
+    "functionName": "calculateStandardDeviationOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

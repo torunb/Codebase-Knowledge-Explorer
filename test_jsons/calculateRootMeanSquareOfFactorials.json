@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "factorial()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateRootMeanSquareOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

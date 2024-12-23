@@ -1,0 +1,14 @@
+{
+    "callers": [
+        "calculateSumOfGeometricSeries()"
+    ],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "power()",
+        "subtract()"
+    ],
+    "functionName": "calculateGeometricSeries",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

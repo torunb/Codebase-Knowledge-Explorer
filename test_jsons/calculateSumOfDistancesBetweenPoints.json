@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateDistanceBetweenPoints()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfDistancesBetweenPoints",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

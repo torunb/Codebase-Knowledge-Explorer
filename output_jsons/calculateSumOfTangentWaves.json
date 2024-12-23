@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateTangentWave()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfTangentWaves"
+}

@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "isPrime()",
+        "sum()"
+    ],
+    "functionName": "calculatePrimeFactorialSum"
+}

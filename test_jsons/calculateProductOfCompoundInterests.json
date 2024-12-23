@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateCompoundInterest()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfCompoundInterests",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

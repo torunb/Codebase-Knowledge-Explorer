@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateHarmonicMean()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfHarmonicMeans",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

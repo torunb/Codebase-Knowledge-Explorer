@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticMean()",
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfFactorialMeans"
+}

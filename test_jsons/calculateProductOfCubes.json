@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateSumOfCubes()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfCubes",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

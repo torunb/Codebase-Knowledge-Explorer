@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateCosineWave()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfCosineWaves"
+}

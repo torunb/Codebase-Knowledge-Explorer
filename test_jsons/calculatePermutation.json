@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculateProductOfPermutations()"
+    ],
+    "calls": [
+        "permutation()"
+    ],
+    "functionName": "calculatePermutation",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

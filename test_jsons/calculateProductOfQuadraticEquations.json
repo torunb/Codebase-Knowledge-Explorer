@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateQuadraticEquation()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfQuadraticEquations",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

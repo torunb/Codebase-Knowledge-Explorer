@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateWeightedHarmonicMean"
+}

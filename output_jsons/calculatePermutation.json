@@ -1,0 +1,9 @@
+{
+    "callers": [
+        "calculateProductOfPermutations()"
+    ],
+    "calls": [
+        "permutation()"
+    ],
+    "functionName": "calculatePermutation"
+}

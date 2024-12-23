@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateCubicEquation()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfCubicEquations"
+}

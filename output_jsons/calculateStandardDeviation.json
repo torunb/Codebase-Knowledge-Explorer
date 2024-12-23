@@ -1,0 +1,15 @@
+{
+    "callers": [
+        "calculateStandardDeviationOfFactorials()"
+    ],
+    "calls": [
+        "calculateArithmeticMean()",
+        "calculateStandardDeviation()",
+        "divide()",
+        "factorial()",
+        "power()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateStandardDeviation"
+}

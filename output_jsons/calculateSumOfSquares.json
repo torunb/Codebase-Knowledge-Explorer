@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateSumOfSquares()"
+    ],
+    "calls": [
+        "calculateSumOfSquares()",
+        "divide()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfSquares"
+}

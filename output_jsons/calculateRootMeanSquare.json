@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "factorial()",
+        "power()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateRootMeanSquare"
+}

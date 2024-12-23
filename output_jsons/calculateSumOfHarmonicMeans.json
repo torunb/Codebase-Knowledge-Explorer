@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateHarmonicMean()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfHarmonicMeans"
+}

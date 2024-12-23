@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateMedian()",
+        "factorial()"
+    ],
+    "functionName": "calculateMedianOfFactorials"
+}

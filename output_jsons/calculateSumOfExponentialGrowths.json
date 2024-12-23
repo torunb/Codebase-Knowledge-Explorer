@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateExponentialGrowth()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfExponentialGrowths"
+}

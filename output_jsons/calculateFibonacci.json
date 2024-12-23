@@ -1,0 +1,13 @@
+{
+    "callers": [
+        "calculateFibonacciSum()",
+        "calculateFibonacciSumOfFactorials()",
+        "calculateSumOfFibonacciNumbers()"
+    ],
+    "calls": [
+        "calculateFibonacci()",
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateFibonacci"
+}

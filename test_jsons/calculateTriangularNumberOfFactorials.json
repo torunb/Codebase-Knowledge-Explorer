@@ -1,0 +1,12 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "factorial()",
+        "multiply()",
+        "sum()"
+    ],
+    "functionName": "calculateTriangularNumberOfFactorials",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

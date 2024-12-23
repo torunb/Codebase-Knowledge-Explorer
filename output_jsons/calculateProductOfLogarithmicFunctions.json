@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateLogarithmicFunction()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfLogarithmicFunctions"
+}

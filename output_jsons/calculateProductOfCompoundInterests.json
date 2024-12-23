@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateCompoundInterest()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfCompoundInterests"
+}

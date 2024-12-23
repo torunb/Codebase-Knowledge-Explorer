@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateVariance()",
+        "factorial()"
+    ],
+    "functionName": "calculateVarianceOfFactorials"
+}

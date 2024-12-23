@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFactorialSum()",
+        "divide()",
+        "sum()"
+    ],
+    "functionName": "calculateArithmeticMeanOfFactorialSums"
+}

@@ -1,0 +1,12 @@
+{
+    "callers": [
+        "calculateProductOfCosineWaves()"
+    ],
+    "calls": [
+        "cos()",
+        "multiply()"
+    ],
+    "functionName": "calculateCosineWave",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

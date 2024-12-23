@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "divide()",
+        "factorial()",
+        "sqrt()",
+        "sum()"
+    ],
+    "functionName": "calculateRootMeanSquareOfFactorials"
+}

@@ -1,0 +1,9 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateFibonacci()",
+        "factorial()",
+        "sum()"
+    ],
+    "functionName": "calculateFibonacciSumOfFactorials"
+}

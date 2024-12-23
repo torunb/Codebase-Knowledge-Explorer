@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculatePrimeFactorialSum()",
+        "calculateSumOfPrimes()"
+    ],
+    "calls": [
+        "calculateModulo()",
+        "sqrt()"
+    ],
+    "functionName": "isPrime"
+}

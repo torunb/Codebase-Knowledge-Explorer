@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateArithmeticMean()",
+        "multiply()"
+    ],
+    "functionName": "calculateProductOfArithmeticMeans",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

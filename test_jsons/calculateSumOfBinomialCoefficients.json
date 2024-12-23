@@ -1,0 +1,10 @@
+{
+    "callers": [],
+    "calls": [
+        "calculateBinomialCoefficient()",
+        "sum()"
+    ],
+    "functionName": "calculateSumOfBinomialCoefficients",
+    "owner": "torunb",
+    "repo": "mathproject"
+}

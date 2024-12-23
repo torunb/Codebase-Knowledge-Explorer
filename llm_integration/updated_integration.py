@@ -16,10 +16,16 @@ class UpdatedAzureOpenAIIntegration:
         # Define the deployment name
         self.deployment_name = os.getenv("DEPLOYMENT_NAME")  # Ensure your .env file contains this key
 
-    def get_explanation(self, function_code, caller_functions_code, callee_functions_code):
-        # Create the explanation prompt using all provided code
+    def get_explanation(self, function_code, caller_functions_code=None, callee_functions_code=None):
+        # Create the explanation prompt using the required and optional code
+        caller_functions_code = caller_functions_code or "Not provided."
+        callee_functions_code = callee_functions_code or "Not provided."
+
         prompt = f"""
-        You are an expert code reviewer. Analyze the following code block (`function_code`) in detail. Your explanation should focus solely on the functionality, purpose, and behavior of `function_code`. Use `caller_functions_code` and `callee_functions_code` as background context to better understand and explain `function_code` but do not include them directly in the explanation.
+        You are an expert code reviewer. Provide a concise explanation of the following code block (`function_code`). 
+        Focus on its functionality and purpose, keeping the explanation short and to the point. Use the optional context 
+        from `caller_functions_code` and `callee_functions_code` only to enhance your understanding, but do not include 
+        unnecessary details.
 
         function_code:
         {function_code}
@@ -29,7 +35,6 @@ class UpdatedAzureOpenAIIntegration:
 
         callee_functions_code (for context only):
         {callee_functions_code}
-
         """
 
         try:

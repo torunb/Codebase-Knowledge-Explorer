@@ -1,0 +1,8 @@
+{
+    "callers": [],
+    "calls": [
+        "factorial()",
+        "subtract()"
+    ],
+    "functionName": "calculateGreatestDifferenceOfFactorials"
+}

@@ -1,0 +1,10 @@
+{
+    "callers": [
+        "calculateSumOfTangentWaves()"
+    ],
+    "calls": [
+        "multiply()",
+        "tan()"
+    ],
+    "functionName": "calculateTangentWave"
+}

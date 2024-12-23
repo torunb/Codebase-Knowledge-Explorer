@@ -1,0 +1,11 @@
+{
+    "callers": [
+        "calculateSumOfBinomialCoefficients()"
+    ],
+    "calls": [
+        "combination()"
+    ],
+    "functionName": "calculateBinomialCoefficient",
+    "owner": "torunb",
+    "repo": "mathproject"
+}
