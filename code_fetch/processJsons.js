@@ -47,7 +47,7 @@ const processFilesSequentially = async () => {
 
       try {
         // Send the POST request with a timeout
-        const response = await axios.post(serverUrl, requestData, { timeout: 15000 }); // 10s timeout
+        const response = await axios.post(serverUrl, requestData, { timeout: 25000 }); // 10s timeout
         console.log(`Response for ${file}:`, response.data);
 
         // Save progress

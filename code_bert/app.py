@@ -36,7 +36,7 @@ def calculate_similarity(embedding1, embedding2):
     return F.cosine_similarity(embedding1, embedding2).item()
 
 # CSV file setup
-CSV_FILE = "explanations.csv"
+CSV_FILE = "explanations_with_cg.csv"
 if not os.path.exists(CSV_FILE):
     with open(CSV_FILE, "w", newline="") as file:
         writer = csv.writer(file)

@@ -43,16 +43,11 @@ def process_code():
         if similarity_response.status_code != 200:
             return jsonify({"error": f"Similarity API error: {similarity_response.text}"}), 500
 
-        # Extract similarity score and explanation from the response
-        similarity_data = similarity_response.json()
-        confidence_score = similarity_data.get("Confidence score", None)
-
         # Create the final response
         response = {
             "original_code": function_code,
             "explanation": explanation,
             "generated_code": generated_code,
-            "confidence_score": confidence_score
         }
 
         return jsonify(response), 200
